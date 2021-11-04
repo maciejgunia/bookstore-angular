@@ -1,0 +1,10 @@
+<div class="book">
+  <div class="id">{{data?.id}}</div>
+  <div>{{data?.title}}</div>
+  <button *ngIf="activeUserId && !data?.userId" (click)="rentBook()">
+    Rent this book
+  </button>
+  <button *ngIf="activeUserId === data?.userId" (click)="returnBook()">
+    Return this book
+  </button>
+</div>

@@ -1,0 +1,10 @@
+<select (change)="setActiveUser($event)">
+  <option
+    *ngFor="let user of service.users$ | async; trackBy:identify"
+    value="{{user.id}}"
+  >
+    {{user.name}}
+  </option>
+  <option value="">not logged in</option>
+</select>
+{{service.activeUserId$ | async}}

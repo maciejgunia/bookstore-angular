@@ -1,0 +1,11 @@
+<div class="booklist">
+  <h2>Books</h2>
+  <div *ngFor="let book of bookService.books">
+    <book
+      [data]="book"
+      [activeUserId]="userService.activeUserId$ | async"
+      (rentClicked)="rentBook($event)"
+      (returnClicked)="returnBook($event)"
+    ></book>
+  </div>
+</div>
